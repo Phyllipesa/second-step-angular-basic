@@ -7,8 +7,8 @@ import { User } from '../../_models/user';
   styleUrl: './users.component.css'
 })
 export class UsersComponent {
-
   // users: string[] = ['Galt', 'Rearden', "d'Anconia"];
+  userSelected: User | undefined;
   users: User[] = [
     {
       name: 'Galt',
@@ -23,4 +23,8 @@ export class UsersComponent {
       age: 33,
     }
   ];
+
+  infoUserSelected(user: User) {
+    this.userSelected = user;
+  }
 }
