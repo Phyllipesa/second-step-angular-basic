@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'second-step-angular-basic';
+  exibeHome: boolean = true;
+
+  destruir() {
+    this.exibeHome = false;
+  }
 }
