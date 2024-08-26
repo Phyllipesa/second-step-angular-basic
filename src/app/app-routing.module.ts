@@ -7,7 +7,8 @@ import { UserComponent } from './pages/user/user.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'users/list', component: UsersComponent },
-  { path: 'users/:username', component: UserComponent }
+  // { path: 'users/:username', component: UserComponent } Pegando informação via Param
+  { path: 'users/details', component: UserComponent } // pegando informação via Query param
 ];
 
 @NgModule({
