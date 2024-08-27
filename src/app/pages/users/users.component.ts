@@ -50,5 +50,6 @@ export class UsersComponent implements OnInit {
 
   submitForm() {
     this.users.push(this.userForm.value);
+    this.userForm.reset();
   }
 }
