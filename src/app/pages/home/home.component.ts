@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../_service/user.service';
-import { User } from '../../_models/user';
 import { UserGit } from '../../_models/userGit';
 
 @Component({
@@ -8,18 +7,23 @@ import { UserGit } from '../../_models/userGit';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
+  username: string = '';
   user: UserGit | undefined;
 
-  constructor(private userService: UserService) {}
-
-  ngOnInit(): void {
-    this.getGitUser();
-  }
+  constructor(
+    private userService: UserService,
+  ) {}
 
   getGitUser() {
-    this.userService.getGitUser('bitcoin').subscribe((response: UserGit) => {
-      this.user = response;
-    })
+    this.userService
+    .getGitUser(this.username)
+    .subscribe(
+      {
+        next: data => {
+          this.user = data;
+        }
+      }
+    )
   }
 }
