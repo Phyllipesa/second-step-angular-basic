@@ -11,6 +11,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { UserComponent } from './pages/user/user.component';
 import { UserCardComponent } from './_components/user-card/user-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
