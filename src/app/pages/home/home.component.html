@@ -18,21 +18,21 @@
     <div class="row justify-content-center">
         <div class="col-md-4">
             <div class="card text-center">
-                <img [src]="user?.avatar_url" alt="" class="card-img-top" />
+                <img [src]="user.avatar_url" alt="" class="card-img-top" />
                 <div class="card-body">
-                    <h5 class="card-title">{{ user?.name }}</h5>
-                    <p class="card-text">{{ '@' + user?.login }}</p>
+                    <h5 class="card-title">{{ user.name }}</h5>
+                    <p class="card-text">{{ '@' + user.login }}</p>
                     <div class="text-center row">
                         <div class="col-md">
                             <p class="m-0"><b>Seguidores</b></p>
-                            <p class="card-text col-md">{{ user?.followers }}</p>
+                            <p class="card-text col-md">{{ user.followers }}</p>
                         </div>
                         <div class="col-md">
                             <p class="m-0"><b>Seguindo</b></p>
-                            <p class="card-text col-md">{{ user?.following }}</p>
+                            <p class="card-text col-md">{{ user.following }}</p>
                         </div>
                     </div>
-                    <a class="btn btn-primary" [href]="user?.html_url">Visitar perfil</a>
+                    <a class="btn btn-primary" [href]="user.html_url">Visitar perfil</a>
                 </div>
             </div>
         </div>
