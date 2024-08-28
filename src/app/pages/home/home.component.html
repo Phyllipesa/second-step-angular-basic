@@ -1,8 +1,24 @@
-<div class="container">
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="input-group mb-3">
+            <input
+                type="text"
+                class="form-control" 
+                placeholder="Search a username" 
+                aria-label="Search a username"
+                [(ngModel)]="username"
+                name="username"
+            >
+            <button (click)="getGitUser()" class="btn btn-success" type="button">Search</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="user" class="container">
     <div class="row justify-content-center">
         <div class="col-md-4">
             <div class="card text-center">
-                <img [src]="user?.avatar_url" alt="" class="card-img-top"/>
+                <img [src]="user?.avatar_url" alt="" class="card-img-top" />
                 <div class="card-body">
                     <h5 class="card-title">{{ user?.name }}</h5>
                     <p class="card-text">{{ '@' + user?.login }}</p>
