@@ -10,14 +10,18 @@ import { UserGit } from '../../_models/userGit';
 export class HomeComponent {
   username: string = '';
   user: UserGit | undefined;
+  notFound: boolean = false;
+  emptySearchErr: boolean = false;
 
   constructor(
     private userService: UserService
   ) {}
 
   getGitUser() {
-    if (this.username.length == 0) {
-      alert('Please enter a username');
+    if(this.username.length == 0) {
+      this.emptySearchErr = true;
+
+      this.setTimeErr('emptySearchErr')
       return;
     }
 
@@ -30,10 +34,18 @@ export class HomeComponent {
         },
         error: error => {
           if(error.error.message == 'Not Found') {
-            alert('User not found');
+            this.notFound = true;
           }
+
+         this.setTimeErr('notFound')
         }
       }
     )
+  }
+
+  setTimeErr(err: 'emptySearchErr' | 'notFound') {
+    setTimeout(() => {
+      this[err] = false;
+    }, 1000);
   }
 }
